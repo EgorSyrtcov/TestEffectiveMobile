@@ -6,13 +6,13 @@ struct LoginViewModelRouting {
 }
 
 protocol LoginViewModelInput {
-//    var email: CurrentValueSubject<String?, Never> { get set }
-//    var nextButtonDidTapSubject: PassthroughSubject<Void, Never> { get }
+    var email: CurrentValueSubject<String?, Never> { get set }
+    var nextButtonDidTapSubject: PassthroughSubject<Void, Never> { get }
 }
 
 protocol LoginViewModelOutput {
-//    var nextButtonStatePublisher: AnyPublisher<Bool, Never> { get }
-//    var errorPublisher: AnyPublisher<(title: String?, subtitle: String?), Never> { get }
+    var nextButtonStatePublisher: AnyPublisher<Bool, Never> { get }
+    var errorPublisher: AnyPublisher<(title: String?, subtitle: String?), Never> { get }
 }
 
 typealias LoginInfo = LoginViewModelInput & LoginViewModelOutput
@@ -30,24 +30,20 @@ final class LoginViewModel: LoginInfo {
     
     // MARK: - LoginViewModelInput
     
-//    var email = CurrentValueSubject<String?, Never>("")
-//    let nextButtonDidTapSubject = PassthroughSubject<Void, Never>()
+    var email = CurrentValueSubject<String?, Never>("")
+    let nextButtonDidTapSubject = PassthroughSubject<Void, Never>()
     
     // MARK: - LoginViewModelOutput
     
-//    var nextButtonStatePublisher: AnyPublisher<Bool, Never> {
-//
-//        return Publishers.CombineLatest(
-//            email.map { $0?.isEmpty == false },
-//            password.map { $0?.isEmpty == false }
-//        )
-//            .map { $0 && $1 }
-//            .eraseToAnyPublisher()
-//    }
+    var nextButtonStatePublisher: AnyPublisher<Bool, Never> {
+        return
+            email.map { $0?.isEmpty == false }
+            .eraseToAnyPublisher()
+    }
     
-//    var errorPublisher: AnyPublisher<(title: String?, subtitle: String?), Never> {
-//        errorSubject.eraseToAnyPublisher()
-//    }
+    var errorPublisher: AnyPublisher<(title: String?, subtitle: String?), Never> {
+        errorSubject.eraseToAnyPublisher()
+    }
     
     // MARK: - Initialization
     
@@ -57,26 +53,23 @@ final class LoginViewModel: LoginInfo {
     }
     
     private func configureBindings() {
-//        nextButtonDidTapSubject
-//            .sink { [weak self] _ in
-//                guard
-//                    self?.loginAndPasswordValidate() == true
-//                else {
-//                    self?.errorSubject.send((title: "Email is invalid or password is less than 6 characters", subtitle: nil))
-//                    return
-//                }
-//
-//                guard let userDataModelSubject = self?.getUserDataModel() else { return }
-//                self?.routing.signUpButtonDidTapSubject.send(userDataModelSubject)
-//            }
-//            .store(in: &cancellables)
+        nextButtonDidTapSubject
+            .sink { [weak self] _ in
+                guard
+                    self?.loginAndPasswordValidate() == true
+                else {
+                    self?.errorSubject.send((title: "Email is invalid or password is less than 6 characters", subtitle: nil))
+                    return
+                }
+                print("GO to MAIN Screen")
+            }
+            .store(in: &cancellables)
     }
     
-//    private func loginAndPasswordValidate() -> Bool {
-//        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-//        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-//        let passwordCount = password.value?.count ?? 0 >= 6
-//        return emailPred.evaluate(with: email.value) && passwordCount
-//    }
+    private func loginAndPasswordValidate() -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email.value)
+    }
     
 }

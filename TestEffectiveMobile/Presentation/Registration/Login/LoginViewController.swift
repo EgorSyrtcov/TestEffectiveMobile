@@ -32,28 +32,20 @@ final class LoginViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         return label
     }()
-
-    lazy private var emailTextField:UITextField = {
-        let textField = UITextField()
+    
+    lazy private var customTextField: CustomTextField = {
+        let textField = CustomTextField(frame: .zero,
+                                        leftIconImage: UIImage(named: "emailIcon")!,
+                                        clearButtonImage: UIImage(named: "closeIcon")!)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.autocapitalizationType = .none
         textField.attributedPlaceholder = NSAttributedString(string: "Электронная почта или телефон", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         textField.backgroundColor = UIColor(named: "Grey2")
         textField.keyboardType = .default
         textField.returnKeyType = .next
-        textField.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        textField.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         textField.layer.cornerRadius = 8
         textField.textColor = UIColor(named: "Grey4")
-        
-        // Left icon (with padding)
-            let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
-            let iconImageView = UIImageView(image: UIImage(named: "emailIcon"))
-            iconImageView.contentMode = .center
-            iconImageView.frame = CGRect(x: 0, y: 0, width: 40, height: 20)
-            leftView.addSubview(iconImageView)
-            textField.leftView = leftView
-            textField.leftViewMode = .always
-        
         textField.delegate = self
         return textField
     }()
@@ -67,7 +59,8 @@ final class LoginViewController: UIViewController {
         button.layer.cornerRadius = 8
         button.alpha = 0.5
         button.translatesAutoresizingMaskIntoConstraints = false
-        //button.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
+        button.isEnabled = false
+        button.addTarget(self, action: #selector(continueButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -104,26 +97,25 @@ final class LoginViewController: UIViewController {
     }
     
     private func viewModelBinding() {
-//        viewModel.errorPublisher
-//            .sink { [weak self] error in self?.showAlert(title: error.title, subtitle: error.subtitle) }
-//            .store(in: &cancellables)
-//
-//        viewModel.nextButtonStatePublisher
-//            .sink { [weak self] returnValue in
-//                guard let self = self else { return }
-//                self.singInButton.isEnabled = returnValue
-//
-//                self.singInButton.backgroundColor = returnValue
-//                ? UIColor.red.withAlphaComponent(1)
-//                : UIColor.red.withAlphaComponent(0.5)
-//            }
-//            .store(in: &cancellables)
+        viewModel.errorPublisher
+            .sink { [weak self] error in self?.showAlert(title: error.title, subtitle: error.subtitle) }
+            .store(in: &cancellables)
+
+        viewModel.nextButtonStatePublisher
+            .sink { [weak self] returnValue in
+                guard let self = self else { return }
+                self.continueButton.isEnabled = returnValue
+
+                self.continueButton.backgroundColor = returnValue
+                ? UIColor(named: "Blue")!
+                : UIColor(named: "DarkBlue")!
+            }
+            .store(in: &cancellables)
     }
     
     private func setupUI() {
         view.addSubviews(enterLabel, findWorkView)
-        findWorkView.addSubviews(findWorkLabel, emailTextField, continueButton, enterWithPasswordButton)
-       // view.addSubviews(emailTextField, )
+        findWorkView.addSubviews(findWorkLabel, customTextField, continueButton, enterWithPasswordButton)
         
         NSLayoutConstraint.activate([
             enterLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -30),
@@ -140,60 +132,41 @@ final class LoginViewController: UIViewController {
             findWorkLabel.leftAnchor.constraint(equalTo: findWorkView.leftAnchor, constant: 16),
             findWorkLabel.rightAnchor.constraint(equalTo: findWorkView.rightAnchor, constant: -16),
             
-            emailTextField.topAnchor.constraint(equalTo: findWorkLabel.bottomAnchor, constant: 16),
-            emailTextField.leftAnchor.constraint(equalTo: findWorkLabel.leftAnchor),
-            emailTextField.rightAnchor.constraint(equalTo: findWorkLabel.rightAnchor),
-            emailTextField.heightAnchor.constraint(equalToConstant: 40),
+            customTextField.topAnchor.constraint(equalTo: findWorkLabel.bottomAnchor, constant: 16),
+            customTextField.leftAnchor.constraint(equalTo: findWorkLabel.leftAnchor),
+            customTextField.rightAnchor.constraint(equalTo: findWorkLabel.rightAnchor),
+            customTextField.heightAnchor.constraint(equalToConstant: 40),
             
             continueButton.heightAnchor.constraint(equalToConstant: 40),
-            continueButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-            continueButton.leftAnchor.constraint(equalTo: emailTextField.leftAnchor),
+            continueButton.topAnchor.constraint(equalTo: customTextField.bottomAnchor, constant: 20),
+            continueButton.leftAnchor.constraint(equalTo: customTextField.leftAnchor),
             continueButton.widthAnchor.constraint(equalTo: findWorkView.widthAnchor, multiplier: 0.4),
             
             enterWithPasswordButton.heightAnchor.constraint(equalToConstant: 40),
             enterWithPasswordButton.topAnchor.constraint(equalTo: continueButton.topAnchor),
-            enterWithPasswordButton.rightAnchor.constraint(equalTo: emailTextField.rightAnchor),
+            enterWithPasswordButton.rightAnchor.constraint(equalTo: customTextField.rightAnchor),
             enterWithPasswordButton.widthAnchor.constraint(equalTo: findWorkView.widthAnchor, multiplier: 0.5),
-            
-            
-//            
-//            emailTextField.centerXAnchor.constraint(equalTo: elasticViewForEmail.centerXAnchor),
-//            emailTextField.centerYAnchor.constraint(equalTo: elasticViewForEmail.centerYAnchor),
-//            emailTextField.heightAnchor.constraint(equalTo: elasticViewForEmail.heightAnchor, multiplier: 0.9),
-//            emailTextField.widthAnchor.constraint(equalTo: elasticViewForEmail.widthAnchor, multiplier: 0.9),
-//
         ])
     }
     
     //MARK: Actions
     
-//    @objc func signInButtonAction(sender: UIButton!) {
-//        viewModel.nextButtonDidTapSubject.send()
-//    }
+    @objc func continueButtonAction(sender: UIButton!) {
+        viewModel.nextButtonDidTapSubject.send()
+    }
     
 }
 
 extension LoginViewController: UITextFieldDelegate {
     
-//    //MARK: UITextFieldDelegate
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//
-//        switch textField {
-//        case emailTextField:
-//            passwordTextField.becomeFirstResponder()
-//        default:
-//            textField.resignFirstResponder()
-//        }
-//
-//        return true
-//    }
+    //MARK: UITextFieldDelegate
     
-//    func textFieldDidChangeSelection(_ textField: UITextField) {
-//        switch textField {
-//        case emailTextField:
-//            viewModel.email.send(textField.text)
-//        default: break
-//        }
-//    }
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        switch textField {
+        case customTextField:
+            viewModel.email.send(textField.text)
+        default: break
+        }
+    }
 }
 

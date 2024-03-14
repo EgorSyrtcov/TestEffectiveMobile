@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2B341AE2BA2CB2500F55957 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B341AD2BA2CB2500F55957 /* CustomTextField.swift */; };
 		E2B7B3162BA1B83100661104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3152BA1B83100661104 /* AppDelegate.swift */; };
 		E2B7B3182BA1B83100661104 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3172BA1B83100661104 /* SceneDelegate.swift */; };
 		E2B7B31F2BA1B83300661104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B7B31E2BA1B83300661104 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2B341AD2BA2CB2500F55957 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E2B7B3122BA1B83100661104 /* TestEffectiveMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestEffectiveMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B7B3152BA1B83100661104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2B7B3172BA1B83100661104 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		E2B7B3392BA1B8D600661104 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E2B341AD2BA2CB2500F55957 /* CustomTextField.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B341AE2BA2CB2500F55957 /* CustomTextField.swift in Sources */,
 				E2B7B3372BA1B8CA00661104 /* UITableViewCell.swift in Sources */,
 				E2B7B32C2BA1B8B800661104 /* AppCoordinator.swift in Sources */,
 				E2B7B32D2BA1B8B800661104 /* Coordinator.swift in Sources */,
