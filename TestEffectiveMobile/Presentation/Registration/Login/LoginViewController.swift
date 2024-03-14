@@ -50,6 +50,17 @@ final class LoginViewController: UIViewController {
         return textField
     }()
     
+    lazy var errorLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Вы ввели неверный е-mail"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.textColor = .red
+        label.isHidden = true
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        return label
+    }()
+    
     lazy private var continueButton: UIButton = {
         let button = UIButton()
         button.setTitle("Продолжить", for: .normal)
@@ -98,7 +109,11 @@ final class LoginViewController: UIViewController {
     
     private func viewModelBinding() {
         viewModel.errorPublisher
-            .sink { [weak self] error in self?.showAlert(title: error.title, subtitle: error.subtitle) }
+            .sink { [weak self] _ in
+                self?.customTextField.layer.borderColor = UIColor.red.cgColor
+                self?.customTextField.layer.borderWidth = 1.0
+                self?.errorLabel.isHidden = false
+            }
             .store(in: &cancellables)
 
         viewModel.nextButtonStatePublisher
@@ -115,7 +130,7 @@ final class LoginViewController: UIViewController {
     
     private func setupUI() {
         view.addSubviews(enterLabel, findWorkView)
-        findWorkView.addSubviews(findWorkLabel, customTextField, continueButton, enterWithPasswordButton)
+        findWorkView.addSubviews(findWorkLabel, customTextField, errorLabel, continueButton, enterWithPasswordButton)
         
         NSLayoutConstraint.activate([
             enterLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -30),
@@ -137,10 +152,15 @@ final class LoginViewController: UIViewController {
             customTextField.rightAnchor.constraint(equalTo: findWorkLabel.rightAnchor),
             customTextField.heightAnchor.constraint(equalToConstant: 40),
             
+            errorLabel.topAnchor.constraint(equalTo: customTextField.bottomAnchor, constant: 5),
+            errorLabel.leftAnchor.constraint(equalTo: customTextField.leftAnchor),
+            errorLabel.rightAnchor.constraint(equalTo: customTextField.rightAnchor),
+            errorLabel.heightAnchor.constraint(equalToConstant: 20),
+            
             continueButton.heightAnchor.constraint(equalToConstant: 40),
-            continueButton.topAnchor.constraint(equalTo: customTextField.bottomAnchor, constant: 20),
-            continueButton.leftAnchor.constraint(equalTo: customTextField.leftAnchor),
-            continueButton.widthAnchor.constraint(equalTo: findWorkView.widthAnchor, multiplier: 0.4),
+            continueButton.topAnchor.constraint(equalTo: errorLabel.bottomAnchor, constant: 5),
+            continueButton.leftAnchor.constraint(equalTo: errorLabel.leftAnchor),
+            continueButton.widthAnchor.constraint(equalTo: errorLabel.widthAnchor, multiplier: 0.4),
             
             enterWithPasswordButton.heightAnchor.constraint(equalToConstant: 40),
             enterWithPasswordButton.topAnchor.constraint(equalTo: continueButton.topAnchor),
@@ -165,8 +185,15 @@ extension LoginViewController: UITextFieldDelegate {
         switch textField {
         case customTextField:
             viewModel.email.send(textField.text)
+            resetError(textField)
         default: break
         }
+    }
+    
+    func resetError(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.clear.cgColor
+        textField.layer.borderWidth = 0
+        self.errorLabel.isHidden = true
     }
 }
 

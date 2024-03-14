@@ -12,7 +12,7 @@ protocol LoginViewModelInput {
 
 protocol LoginViewModelOutput {
     var nextButtonStatePublisher: AnyPublisher<Bool, Never> { get }
-    var errorPublisher: AnyPublisher<(title: String?, subtitle: String?), Never> { get }
+    var errorPublisher: AnyPublisher<Bool, Never> { get }
 }
 
 typealias LoginInfo = LoginViewModelInput & LoginViewModelOutput
@@ -26,7 +26,7 @@ final class LoginViewModel: LoginInfo {
     
     // MARK: - Private Subjects
     
-    private let errorSubject = PassthroughSubject<(title: String?, subtitle: String?), Never>()
+    private let errorSubject = PassthroughSubject<Bool, Never>()
     
     // MARK: - LoginViewModelInput
     
@@ -41,7 +41,7 @@ final class LoginViewModel: LoginInfo {
             .eraseToAnyPublisher()
     }
     
-    var errorPublisher: AnyPublisher<(title: String?, subtitle: String?), Never> {
+    var errorPublisher: AnyPublisher<Bool, Never> {
         errorSubject.eraseToAnyPublisher()
     }
     
@@ -58,7 +58,7 @@ final class LoginViewModel: LoginInfo {
                 guard
                     self?.loginAndPasswordValidate() == true
                 else {
-                    self?.errorSubject.send((title: "Email is invalid or password is less than 6 characters", subtitle: nil))
+                    self?.errorSubject.send(true)
                     return
                 }
                 print("GO to MAIN Screen")
