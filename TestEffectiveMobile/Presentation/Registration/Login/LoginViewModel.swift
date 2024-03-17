@@ -2,7 +2,7 @@ import UIKit
 import Combine
 
 struct LoginViewModelRouting {
-    
+    let showPasswordScreenSubject = PassthroughSubject<Void, Never>()
 }
 
 protocol LoginViewModelInput {
@@ -61,7 +61,7 @@ final class LoginViewModel: LoginInfo {
                     self?.errorSubject.send(true)
                     return
                 }
-                print("GO to MAIN Screen")
+                self?.routing.showPasswordScreenSubject.send()
             }
             .store(in: &cancellables)
     }

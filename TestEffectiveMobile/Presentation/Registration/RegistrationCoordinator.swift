@@ -19,5 +19,25 @@ final class RegistrationCoordinator: Coordinator {
         let loginViewController = LoginViewController()
         loginViewController.viewModel = loginViewModel
         navigationController.setViewControllers([loginViewController], animated: false)
+        
+        routing.showPasswordScreenSubject
+            .sink { [weak self] _ in
+                self?.showPasscodeCoordinator()
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func showPasscodeCoordinator() {
+        let routing = PasscodeScreenViewModelRouting()
+        let passcodeViewModel = PasscodeScreenViewModel(routing: routing)
+        let passcodeViewController = PasscodeViewController()
+        passcodeViewController.viewModel = passcodeViewModel
+        navigationController.pushViewController(passcodeViewController, animated: true)
+        
+        routing.showMailScreenSubject
+            .sink { [weak self] _ in
+                self?.flowDidFinishSubject.send()
+            }
+            .store(in: &cancellables)
     }
 }

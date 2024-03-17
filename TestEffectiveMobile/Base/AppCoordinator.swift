@@ -29,7 +29,11 @@ final class AppCoordinator: Coordinator {
     }
     
     private func showMainCoordinator() {
-       
+        let tabBarController = UITabBarController()
+        let mainCoordinator = MainCoordinator(tabBarController: tabBarController)
+        childCoordinators = [mainCoordinator]
+        window.rootViewController = tabBarController
+        mainCoordinator.start()
     }
     
     private func removeChildCoordinator(_ coordinator: Coordinator) {
