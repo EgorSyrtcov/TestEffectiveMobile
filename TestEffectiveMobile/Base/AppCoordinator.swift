@@ -13,7 +13,8 @@ final class AppCoordinator: Coordinator {
     private var cancellables: Set<AnyCancellable> = []
     
     func start() {
-        showRegistrationCoordinator()
+        showMainCoordinator()
+       // showRegistrationCoordinator()
     }
 
     private func showRegistrationCoordinator() {

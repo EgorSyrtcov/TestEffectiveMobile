@@ -36,6 +36,12 @@
 		E2C693022BA6E1870011E4E2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693012BA6E1870011E4E2 /* MainCoordinator.swift */; };
 		E2C693042BA7025D0011E4E2 /* FindWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693032BA7025D0011E4E2 /* FindWorkView.swift */; };
 		E2C693062BA709500011E4E2 /* FindEmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693052BA709500011E4E2 /* FindEmployeeView.swift */; };
+		E2C693092BA71CE50011E4E2 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693072BA71CE50011E4E2 /* UICollectionViewCell.swift */; };
+		E2C6930A2BA71CE50011E4E2 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693082BA71CE50011E4E2 /* UICollectionView.swift */; };
+		E2C6930D2BA71E620011E4E2 /* SearchQuickFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6930C2BA71E620011E4E2 /* SearchQuickFilterCell.swift */; };
+		E2C693102BA71F740011E4E2 /* QuickFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6930F2BA71F740011E4E2 /* QuickFilterView.swift */; };
+		E2C693132BA7203A0011E4E2 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693122BA7203A0011E4E2 /* Filter.swift */; };
+		E2C693152BA740380011E4E2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693142BA740380011E4E2 /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +74,12 @@
 		E2C693012BA6E1870011E4E2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E2C693032BA7025D0011E4E2 /* FindWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWorkView.swift; sourceTree = "<group>"; };
 		E2C693052BA709500011E4E2 /* FindEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmployeeView.swift; sourceTree = "<group>"; };
+		E2C693072BA71CE50011E4E2 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		E2C693082BA71CE50011E4E2 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		E2C6930C2BA71E620011E4E2 /* SearchQuickFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuickFilterCell.swift; sourceTree = "<group>"; };
+		E2C6930F2BA71F740011E4E2 /* QuickFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFilterView.swift; sourceTree = "<group>"; };
+		E2C693122BA7203A0011E4E2 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		E2C693142BA740380011E4E2 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		E2E248DA2BA5BE0D008F70D4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E2E248DB2BA5BE13008F70D4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +117,7 @@
 				E2B7B3292BA1B8B800661104 /* Base */,
 				E2B7B32E2BA1B8CA00661104 /* Extention */,
 				E2B7B3392BA1B8D600661104 /* Helpers */,
+				E2C693112BA720110011E4E2 /* Models */,
 				E2B7B33A2BA1B8F200661104 /* Presentation */,
 				E2B7B36A2BA1B8FC00661104 /* Service */,
 				E2B7B3712BA1B90F00661104 /* Resources */,
@@ -128,8 +141,11 @@
 			children = (
 				E2B7B32F2BA1B8CA00661104 /* UIView.swift */,
 				E2B7B3312BA1B8CA00661104 /* UITableView.swift */,
+				E2C693082BA71CE50011E4E2 /* UICollectionView.swift */,
+				E2C693072BA71CE50011E4E2 /* UICollectionViewCell.swift */,
 				E2B7B3322BA1B8CA00661104 /* UITableViewCell.swift */,
 				E2B7B3332BA1B8CA00661104 /* UIViewController.swift */,
+				E2C693142BA740380011E4E2 /* UIImage.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -175,8 +191,8 @@
 		E2B7B3472BA1B8F200661104 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E2B7B3482BA1B8F200661104 /* LoginViewModel.swift */,
 				E2B7B3492BA1B8F200661104 /* LoginViewController.swift */,
+				E2B7B3482BA1B8F200661104 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -211,9 +227,35 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E2C6930B2BA71DD90011E4E2 /* SearchQuickFilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2C6930C2BA71E620011E4E2 /* SearchQuickFilterCell.swift */,
+			);
+			path = SearchQuickFilterCell;
+			sourceTree = "<group>";
+		};
+		E2C6930E2BA71F380011E4E2 /* SearchViews */ = {
+			isa = PBXGroup;
+			children = (
+				E2C6930F2BA71F740011E4E2 /* QuickFilterView.swift */,
+			);
+			path = SearchViews;
+			sourceTree = "<group>";
+		};
+		E2C693112BA720110011E4E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2C693122BA7203A0011E4E2 /* Filter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E2E248D52BA5BCFE008F70D4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				E2C6930E2BA71F380011E4E2 /* SearchViews */,
+				E2C6930B2BA71DD90011E4E2 /* SearchQuickFilterCell */,
 				E204E4952BA6D87700A256F1 /* SearchViewController.swift */,
 				E204E4962BA6D87C00A256F1 /* SearchViewModel.swift */,
 			);
@@ -327,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C692FA2BA6DEAD0011E4E2 /* ProfileViewModel.swift in Sources */,
+				E2C6930D2BA71E620011E4E2 /* SearchQuickFilterCell.swift in Sources */,
 				E2C692FB2BA6DEB80011E4E2 /* MessagesViewModel.swift in Sources */,
 				E2B341AE2BA2CB2500F55957 /* CustomTextField.swift in Sources */,
 				E2B7B3372BA1B8CA00661104 /* UITableViewCell.swift in Sources */,
@@ -337,9 +380,12 @@
 				E2C692FD2BA6DED30011E4E2 /* FeedBackViewController.swift in Sources */,
 				E2C692FE2BA6DEDE0011E4E2 /* FeedBackViewModel.swift in Sources */,
 				E2B7B3602BA1B8F200661104 /* LoginViewController.swift in Sources */,
+				E2C693152BA740380011E4E2 /* UIImage.swift in Sources */,
 				E2C692FF2BA6DEE90011E4E2 /* FavoritesViewController.swift in Sources */,
+				E2C693132BA7203A0011E4E2 /* Filter.swift in Sources */,
 				E2C692F92BA6DEA90011E4E2 /* ProfileViewController.swift in Sources */,
 				E2B7B3382BA1B8CA00661104 /* UIViewController.swift in Sources */,
+				E2C6930A2BA71CE50011E4E2 /* UICollectionView.swift in Sources */,
 				E2B7B35F2BA1B8F200661104 /* LoginViewModel.swift in Sources */,
 				E2B7B3162BA1B83100661104 /* AppDelegate.swift in Sources */,
 				E2C693042BA7025D0011E4E2 /* FindWorkView.swift in Sources */,
@@ -347,7 +393,9 @@
 				E2C692F72BA6DD150011E4E2 /* SearchViewController.swift in Sources */,
 				E2B7B3362BA1B8CA00661104 /* UITableView.swift in Sources */,
 				E2C692FC2BA6DEBD0011E4E2 /* MessagesViewController.swift in Sources */,
+				E2C693102BA71F740011E4E2 /* QuickFilterView.swift in Sources */,
 				E2B7B3342BA1B8CA00661104 /* UIView.swift in Sources */,
+				E2C693092BA71CE50011E4E2 /* UICollectionViewCell.swift in Sources */,
 				E2B7B35A2BA1B8F200661104 /* PasscodeScreenViewModel.swift in Sources */,
 				E2C692F82BA6DE870011E4E2 /* SearchViewModel.swift in Sources */,
 				E2C693022BA6E1870011E4E2 /* MainCoordinator.swift in Sources */,

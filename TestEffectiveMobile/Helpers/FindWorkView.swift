@@ -14,8 +14,8 @@ final class FindWorkView: UIView {
     
     lazy var customTextField: CustomTextField = {
         let textField = CustomTextField(frame: .zero,
-                                        leftIconImage: UIImage(named: "emailIcon")!,
-                                        clearButtonImage: UIImage(named: "closeIcon")!)
+                                        leftIconImage: .named(.emailIcon),
+                                        clearButtonImage: .named(.closeIcon))
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.autocapitalizationType = .none
         textField.attributedPlaceholder = NSAttributedString(string: "Электронная почта или телефон", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])

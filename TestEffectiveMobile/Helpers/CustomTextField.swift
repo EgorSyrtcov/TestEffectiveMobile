@@ -4,10 +4,10 @@ class CustomTextField: UITextField {
 
     let iconImageView = UIImageView()
     let leftIconImage: UIImage
-    let clearButtonImage: UIImage
+    let clearButtonImage: UIImage?
     let clearButton = UIButton(type: .custom)
     
-    init(frame: CGRect, leftIconImage: UIImage, clearButtonImage: UIImage) {
+    init(frame: CGRect, leftIconImage: UIImage, clearButtonImage: UIImage?) {
         self.leftIconImage = leftIconImage
         self.clearButtonImage = clearButtonImage
         super.init(frame: frame)
@@ -19,6 +19,7 @@ class CustomTextField: UITextField {
     }
     
     private func setupViews() {
+        
         // Настройка иконки
         iconImageView.image = leftIconImage
         iconImageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)

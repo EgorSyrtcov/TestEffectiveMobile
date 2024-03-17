@@ -47,12 +47,13 @@ final class MainCoordinator: Coordinator {
         let profileNavController = UINavigationController(rootViewController: profileViewController)
         profileViewController.viewModel = profileViewModel
         
-        searchNavController.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(named: "searchIcon")!, tag: 1)
-        favoritesNavController.tabBarItem = UITabBarItem(title: "Избранное", image: UIImage(named: "favoriteIcon")!, tag: 2)
-        feedBackNavController.tabBarItem = UITabBarItem(title: "Отклики", image: UIImage(named: "feedBackIcon")!, tag: 3)
-        messagesNavController.tabBarItem = UITabBarItem(title: "Сообщения", image: UIImage(named: "messageIcon")!, tag: 4)
-        profileNavController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(named: "profileIcon")!, tag: 5)
+        searchNavController.tabBarItem = UITabBarItem(title: "Поиск", image: .named(.searchIcon), tag: 1)
+        favoritesNavController.tabBarItem = UITabBarItem(title: "Избранное", image: .named(.favoriteIcon), tag: 2)
+        feedBackNavController.tabBarItem = UITabBarItem(title: "Отклики", image: .named(.feedBackIcon), tag: 3)
+        messagesNavController.tabBarItem = UITabBarItem(title: "Сообщения", image: .named(.messageIcon), tag: 4)
+        profileNavController.tabBarItem = UITabBarItem(title: "Профиль", image: .named(.profileIcon), tag: 5)
         
+        tabBarController.tabBar.unselectedItemTintColor = UIColor.white
         tabBarController.setViewControllers([searchNavController, favoritesNavController, feedBackNavController, messagesNavController, profileNavController], animated: true)
     }
 }
