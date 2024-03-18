@@ -23,6 +23,10 @@
 		E2B7B35F2BA1B8F200661104 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3482BA1B8F200661104 /* LoginViewModel.swift */; };
 		E2B7B3602BA1B8F200661104 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3492BA1B8F200661104 /* LoginViewController.swift */; };
 		E2B7B3792BA1B95700661104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B7B3782BA1B95700661104 /* LaunchScreen.storyboard */; };
+		E2BB39472BA81AA300F0FEC5 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB39462BA81AA300F0FEC5 /* LocalService.swift */; };
+		E2BB394A2BA8332600F0FEC5 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB39492BA8332600F0FEC5 /* DetailViewModel.swift */; };
+		E2BB394C2BA8333300F0FEC5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB394B2BA8333300F0FEC5 /* DetailViewController.swift */; };
+		E2BB394F2BA8418200F0FEC5 /* JobInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB394E2BA83F1700F0FEC5 /* JobInfoView.swift */; };
 		E2C692F72BA6DD150011E4E2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204E4952BA6D87700A256F1 /* SearchViewController.swift */; };
 		E2C692F82BA6DE870011E4E2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204E4962BA6D87C00A256F1 /* SearchViewModel.swift */; };
 		E2C692F92BA6DEA90011E4E2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E248DB2BA5BE13008F70D4 /* ProfileViewController.swift */; };
@@ -42,6 +46,12 @@
 		E2C693102BA71F740011E4E2 /* QuickFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6930F2BA71F740011E4E2 /* QuickFilterView.swift */; };
 		E2C693132BA7203A0011E4E2 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693122BA7203A0011E4E2 /* Filter.swift */; };
 		E2C693152BA740380011E4E2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693142BA740380011E4E2 /* UIImage.swift */; };
+		E2C693172BA7686A0011E4E2 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693162BA7686A0011E4E2 /* Offer.swift */; };
+		E2C693192BA769040011E4E2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693182BA769040011E4E2 /* Service.swift */; };
+		E2C6931B2BA7690D0011E4E2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6931A2BA7690D0011E4E2 /* Request.swift */; };
+		E2C6931D2BA769130011E4E2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6931C2BA769130011E4E2 /* Endpoint.swift */; };
+		E2C693202BA76EDA0011E4E2 /* SearchVacanciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6931F2BA76EDA0011E4E2 /* SearchVacanciesCell.swift */; };
+		E2C693222BA778330011E4E2 /* VacanciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693212BA778330011E4E2 /* VacanciesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +81,10 @@
 		E2B7B3482BA1B8F200661104 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E2B7B3492BA1B8F200661104 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2B7B3782BA1B95700661104 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2BB39462BA81AA300F0FEC5 /* LocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
+		E2BB39492BA8332600F0FEC5 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		E2BB394B2BA8333300F0FEC5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E2BB394E2BA83F1700F0FEC5 /* JobInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfoView.swift; sourceTree = "<group>"; };
 		E2C693012BA6E1870011E4E2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E2C693032BA7025D0011E4E2 /* FindWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWorkView.swift; sourceTree = "<group>"; };
 		E2C693052BA709500011E4E2 /* FindEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEmployeeView.swift; sourceTree = "<group>"; };
@@ -80,6 +94,12 @@
 		E2C6930F2BA71F740011E4E2 /* QuickFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFilterView.swift; sourceTree = "<group>"; };
 		E2C693122BA7203A0011E4E2 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		E2C693142BA740380011E4E2 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		E2C693162BA7686A0011E4E2 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		E2C693182BA769040011E4E2 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E2C6931A2BA7690D0011E4E2 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		E2C6931C2BA769130011E4E2 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E2C6931F2BA76EDA0011E4E2 /* SearchVacanciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVacanciesCell.swift; sourceTree = "<group>"; };
+		E2C693212BA778330011E4E2 /* VacanciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesView.swift; sourceTree = "<group>"; };
 		E2E248DA2BA5BE0D008F70D4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E2E248DB2BA5BE13008F70D4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,9 +161,9 @@
 			children = (
 				E2B7B32F2BA1B8CA00661104 /* UIView.swift */,
 				E2B7B3312BA1B8CA00661104 /* UITableView.swift */,
+				E2B7B3322BA1B8CA00661104 /* UITableViewCell.swift */,
 				E2C693082BA71CE50011E4E2 /* UICollectionView.swift */,
 				E2C693072BA71CE50011E4E2 /* UICollectionViewCell.swift */,
-				E2B7B3322BA1B8CA00661104 /* UITableViewCell.swift */,
 				E2B7B3332BA1B8CA00661104 /* UIViewController.swift */,
 				E2C693142BA740380011E4E2 /* UIImage.swift */,
 			);
@@ -163,6 +183,7 @@
 		E2B7B33A2BA1B8F200661104 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E2BB39482BA8330900F0FEC5 /* Detail */,
 				E2B7B34A2BA1B8F200661104 /* MainTabBar */,
 				E2B7B3422BA1B8F200661104 /* Registration */,
 			);
@@ -213,6 +234,10 @@
 		E2B7B36A2BA1B8FC00661104 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				E2BB39452BA81AA300F0FEC5 /* LocalService */,
+				E2C693182BA769040011E4E2 /* Service.swift */,
+				E2C6931A2BA7690D0011E4E2 /* Request.swift */,
+				E2C6931C2BA769130011E4E2 /* Endpoint.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -227,34 +252,63 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E2BB39452BA81AA300F0FEC5 /* LocalService */ = {
+			isa = PBXGroup;
+			children = (
+				E2BB39462BA81AA300F0FEC5 /* LocalService.swift */,
+			);
+			path = LocalService;
+			sourceTree = "<group>";
+		};
+		E2BB39482BA8330900F0FEC5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E2BB394D2BA83EDD00F0FEC5 /* HelpersDatail */,
+				E2BB394B2BA8333300F0FEC5 /* DetailViewController.swift */,
+				E2BB39492BA8332600F0FEC5 /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E2BB394D2BA83EDD00F0FEC5 /* HelpersDatail */ = {
+			isa = PBXGroup;
+			children = (
+				E2BB394E2BA83F1700F0FEC5 /* JobInfoView.swift */,
+			);
+			path = HelpersDatail;
+			sourceTree = "<group>";
+		};
 		E2C6930B2BA71DD90011E4E2 /* SearchQuickFilterCell */ = {
 			isa = PBXGroup;
 			children = (
 				E2C6930C2BA71E620011E4E2 /* SearchQuickFilterCell.swift */,
-			);
-			path = SearchQuickFilterCell;
-			sourceTree = "<group>";
-		};
-		E2C6930E2BA71F380011E4E2 /* SearchViews */ = {
-			isa = PBXGroup;
-			children = (
 				E2C6930F2BA71F740011E4E2 /* QuickFilterView.swift */,
 			);
-			path = SearchViews;
+			path = SearchQuickFilterCell;
 			sourceTree = "<group>";
 		};
 		E2C693112BA720110011E4E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E2C693122BA7203A0011E4E2 /* Filter.swift */,
+				E2C693162BA7686A0011E4E2 /* Offer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E2C6931E2BA76EAD0011E4E2 /* SearchVacanciesCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2C6931F2BA76EDA0011E4E2 /* SearchVacanciesCell.swift */,
+				E2C693212BA778330011E4E2 /* VacanciesView.swift */,
+			);
+			path = SearchVacanciesCell;
 			sourceTree = "<group>";
 		};
 		E2E248D52BA5BCFE008F70D4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				E2C6930E2BA71F380011E4E2 /* SearchViews */,
+				E2C6931E2BA76EAD0011E4E2 /* SearchVacanciesCell */,
 				E2C6930B2BA71DD90011E4E2 /* SearchQuickFilterCell */,
 				E204E4952BA6D87700A256F1 /* SearchViewController.swift */,
 				E204E4962BA6D87C00A256F1 /* SearchViewModel.swift */,
@@ -368,11 +422,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2BB394C2BA8333300F0FEC5 /* DetailViewController.swift in Sources */,
 				E2C692FA2BA6DEAD0011E4E2 /* ProfileViewModel.swift in Sources */,
 				E2C6930D2BA71E620011E4E2 /* SearchQuickFilterCell.swift in Sources */,
 				E2C692FB2BA6DEB80011E4E2 /* MessagesViewModel.swift in Sources */,
 				E2B341AE2BA2CB2500F55957 /* CustomTextField.swift in Sources */,
 				E2B7B3372BA1B8CA00661104 /* UITableViewCell.swift in Sources */,
+				E2BB394A2BA8332600F0FEC5 /* DetailViewModel.swift in Sources */,
 				E2C693002BA6DEF20011E4E2 /* FavoritesViewModel.swift in Sources */,
 				E2B7B32C2BA1B8B800661104 /* AppCoordinator.swift in Sources */,
 				E2B7B32D2BA1B8B800661104 /* Coordinator.swift in Sources */,
@@ -387,15 +443,23 @@
 				E2B7B3382BA1B8CA00661104 /* UIViewController.swift in Sources */,
 				E2C6930A2BA71CE50011E4E2 /* UICollectionView.swift in Sources */,
 				E2B7B35F2BA1B8F200661104 /* LoginViewModel.swift in Sources */,
+				E2C6931D2BA769130011E4E2 /* Endpoint.swift in Sources */,
 				E2B7B3162BA1B83100661104 /* AppDelegate.swift in Sources */,
+				E2C693172BA7686A0011E4E2 /* Offer.swift in Sources */,
 				E2C693042BA7025D0011E4E2 /* FindWorkView.swift in Sources */,
+				E2BB394F2BA8418200F0FEC5 /* JobInfoView.swift in Sources */,
+				E2C693192BA769040011E4E2 /* Service.swift in Sources */,
 				E2B7B35E2BA1B8F200661104 /* RegistrationCoordinator.swift in Sources */,
 				E2C692F72BA6DD150011E4E2 /* SearchViewController.swift in Sources */,
+				E2C693202BA76EDA0011E4E2 /* SearchVacanciesCell.swift in Sources */,
+				E2C6931B2BA7690D0011E4E2 /* Request.swift in Sources */,
 				E2B7B3362BA1B8CA00661104 /* UITableView.swift in Sources */,
 				E2C692FC2BA6DEBD0011E4E2 /* MessagesViewController.swift in Sources */,
 				E2C693102BA71F740011E4E2 /* QuickFilterView.swift in Sources */,
 				E2B7B3342BA1B8CA00661104 /* UIView.swift in Sources */,
 				E2C693092BA71CE50011E4E2 /* UICollectionViewCell.swift in Sources */,
+				E2BB39472BA81AA300F0FEC5 /* LocalService.swift in Sources */,
+				E2C693222BA778330011E4E2 /* VacanciesView.swift in Sources */,
 				E2B7B35A2BA1B8F200661104 /* PasscodeScreenViewModel.swift in Sources */,
 				E2C692F82BA6DE870011E4E2 /* SearchViewModel.swift in Sources */,
 				E2C693022BA6E1870011E4E2 /* MainCoordinator.swift in Sources */,

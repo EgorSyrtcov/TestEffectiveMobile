@@ -14,7 +14,7 @@ final class AppCoordinator: Coordinator {
     
     func start() {
         showMainCoordinator()
-       // showRegistrationCoordinator()
+        //showRegistrationCoordinator()
     }
 
     private func showRegistrationCoordinator() {

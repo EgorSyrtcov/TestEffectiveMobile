@@ -23,6 +23,12 @@ final class MainCoordinator: Coordinator {
         let searchNavController = UINavigationController(rootViewController: searchViewController)
         searchViewController.viewModel = searchViewModel
         
+        routingSearch.showDetailScreenSubject
+            .sink { [weak self] vacancyModel in
+                self?.showDetailScreen()
+            }
+            .store(in: &cancellables)
+        
         let routingFavorites = FavoritesViewModelRouting()
         let favoritesViewModel = FavoritesViewModel(routing: routingFavorites)
         let favoritesViewController = FavoritesViewController()
@@ -55,6 +61,23 @@ final class MainCoordinator: Coordinator {
         
         tabBarController.tabBar.unselectedItemTintColor = UIColor.white
         tabBarController.setViewControllers([searchNavController, favoritesNavController, feedBackNavController, messagesNavController, profileNavController], animated: true)
+    }
+    
+    private func showDetailScreen() {
+        guard let navigationController = tabBarController.selectedViewController as? UINavigationController else { return }
+        let routing = DetailViewModelRouting()
+        let detailViewModel = DetailViewModel(routing: routing)
+        let detailViewController = DetailViewController()
+        detailViewController.viewModel = detailViewModel
+        detailViewController.hidesBottomBarWhenPushed = true
+        navigationController.isNavigationBarHidden = true
+        navigationController.pushViewController(detailViewController, animated: true)
+    
+        routing.backButtonDidTapSubject
+            .sink { 
+                navigationController.popViewController(animated: true)
+            }
+            .store(in: &cancellables)
     }
 }
 

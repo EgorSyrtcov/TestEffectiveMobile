@@ -1,12 +1,12 @@
 import UIKit
 
-final class SearchQuickFilterCell<T: UIView>: UICollectionViewCell {
+final class SearchVacanciesCell<T: UIView>: UITableViewCell {
     
     let containerView: T
     
-    override init(frame: CGRect) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.containerView = T(frame: .zero)
-        super.init(frame: frame)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
     }
     
@@ -16,6 +16,8 @@ final class SearchQuickFilterCell<T: UIView>: UICollectionViewCell {
     
     private func setupUI() {
         self.contentView.addSubview(containerView)
+        self.backgroundColor = .clear
+        self.selectionStyle = .none
         
         containerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -25,5 +27,11 @@ final class SearchQuickFilterCell<T: UIView>: UICollectionViewCell {
             containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let margins = UIEdgeInsets(top: 2, left: 2, bottom: 20, right: 2)
+        contentView.frame = contentView.frame.inset(by: margins)
+    }
 }
-

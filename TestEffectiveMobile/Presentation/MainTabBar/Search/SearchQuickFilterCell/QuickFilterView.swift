@@ -40,13 +40,13 @@ final class QuickFilterView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     func update(with filter: Filter) {
         imageView.image = filter.icon
         titleLabel.text = filter.title
         summaryButton.isHidden = filter.isButton ? false : true
     }
-
+    
     private func setup() {
         self.backgroundColor = UIColor(named: "Grey1")!
         layer.cornerRadius = 10

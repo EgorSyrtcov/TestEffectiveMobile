@@ -13,6 +13,11 @@ extension UIImage {
         case messageIcon
         case profileIcon
         case filterIcon
+        case heartFullIcon
+        case heartEmptyIcon
+        case backIcon
+        case lookIcon
+        case sharedIcon
     }
     
     static func named(_ name: AssetName) -> UIImage {
