@@ -1,6 +1,6 @@
 import UIKit
 
-class CustomTextField: UITextField {
+final class CustomTextField: UITextField {
 
     let iconImageView = UIImageView()
     let leftIconImage: UIImage

@@ -16,7 +16,6 @@
 		E2B7B3342BA1B8CA00661104 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B32F2BA1B8CA00661104 /* UIView.swift */; };
 		E2B7B3362BA1B8CA00661104 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3312BA1B8CA00661104 /* UITableView.swift */; };
 		E2B7B3372BA1B8CA00661104 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3322BA1B8CA00661104 /* UITableViewCell.swift */; };
-		E2B7B3382BA1B8CA00661104 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3332BA1B8CA00661104 /* UIViewController.swift */; };
 		E2B7B35A2BA1B8F200661104 /* PasscodeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3402BA1B8F200661104 /* PasscodeScreenViewModel.swift */; };
 		E2B7B35B2BA1B8F200661104 /* PasscodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3412BA1B8F200661104 /* PasscodeScreenViewController.swift */; };
 		E2B7B35E2BA1B8F200661104 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7B3462BA1B8F200661104 /* RegistrationCoordinator.swift */; };
@@ -52,6 +51,10 @@
 		E2C6931D2BA769130011E4E2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6931C2BA769130011E4E2 /* Endpoint.swift */; };
 		E2C693202BA76EDA0011E4E2 /* SearchVacanciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6931F2BA76EDA0011E4E2 /* SearchVacanciesCell.swift */; };
 		E2C693222BA778330011E4E2 /* VacanciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C693212BA778330011E4E2 /* VacanciesView.swift */; };
+		E2D5D98A2BA87F5C00045F53 /* UserStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D5D9892BA87F5C00045F53 /* UserStatusIndicatorView.swift */; };
+		E2D5D98C2BA8CF4D00045F53 /* AddressInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D5D98B2BA8CF4D00045F53 /* AddressInfoView.swift */; };
+		E2D5D98E2BA8D5F600045F53 /* DescriptionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D5D98D2BA8D5F600045F53 /* DescriptionInfoView.swift */; };
+		E2D5D9902BA8E54C00045F53 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D5D98F2BA8E54C00045F53 /* QuestionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +77,6 @@
 		E2B7B32F2BA1B8CA00661104 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E2B7B3312BA1B8CA00661104 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		E2B7B3322BA1B8CA00661104 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
-		E2B7B3332BA1B8CA00661104 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E2B7B3402BA1B8F200661104 /* PasscodeScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeScreenViewModel.swift; sourceTree = "<group>"; };
 		E2B7B3412BA1B8F200661104 /* PasscodeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeScreenViewController.swift; sourceTree = "<group>"; };
 		E2B7B3462BA1B8F200661104 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
@@ -100,6 +102,10 @@
 		E2C6931C2BA769130011E4E2 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E2C6931F2BA76EDA0011E4E2 /* SearchVacanciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVacanciesCell.swift; sourceTree = "<group>"; };
 		E2C693212BA778330011E4E2 /* VacanciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesView.swift; sourceTree = "<group>"; };
+		E2D5D9892BA87F5C00045F53 /* UserStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatusIndicatorView.swift; sourceTree = "<group>"; };
+		E2D5D98B2BA8CF4D00045F53 /* AddressInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInfoView.swift; sourceTree = "<group>"; };
+		E2D5D98D2BA8D5F600045F53 /* DescriptionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInfoView.swift; sourceTree = "<group>"; };
+		E2D5D98F2BA8E54C00045F53 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		E2E248DA2BA5BE0D008F70D4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E2E248DB2BA5BE13008F70D4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,7 +170,6 @@
 				E2B7B3322BA1B8CA00661104 /* UITableViewCell.swift */,
 				E2C693082BA71CE50011E4E2 /* UICollectionView.swift */,
 				E2C693072BA71CE50011E4E2 /* UICollectionViewCell.swift */,
-				E2B7B3332BA1B8CA00661104 /* UIViewController.swift */,
 				E2C693142BA740380011E4E2 /* UIImage.swift */,
 			);
 			path = Extention;
@@ -274,6 +279,10 @@
 			isa = PBXGroup;
 			children = (
 				E2BB394E2BA83F1700F0FEC5 /* JobInfoView.swift */,
+				E2D5D9892BA87F5C00045F53 /* UserStatusIndicatorView.swift */,
+				E2D5D98B2BA8CF4D00045F53 /* AddressInfoView.swift */,
+				E2D5D98D2BA8D5F600045F53 /* DescriptionInfoView.swift */,
+				E2D5D98F2BA8E54C00045F53 /* QuestionsView.swift */,
 			);
 			path = HelpersDatail;
 			sourceTree = "<group>";
@@ -424,6 +433,7 @@
 			files = (
 				E2BB394C2BA8333300F0FEC5 /* DetailViewController.swift in Sources */,
 				E2C692FA2BA6DEAD0011E4E2 /* ProfileViewModel.swift in Sources */,
+				E2D5D98A2BA87F5C00045F53 /* UserStatusIndicatorView.swift in Sources */,
 				E2C6930D2BA71E620011E4E2 /* SearchQuickFilterCell.swift in Sources */,
 				E2C692FB2BA6DEB80011E4E2 /* MessagesViewModel.swift in Sources */,
 				E2B341AE2BA2CB2500F55957 /* CustomTextField.swift in Sources */,
@@ -437,10 +447,12 @@
 				E2C692FE2BA6DEDE0011E4E2 /* FeedBackViewModel.swift in Sources */,
 				E2B7B3602BA1B8F200661104 /* LoginViewController.swift in Sources */,
 				E2C693152BA740380011E4E2 /* UIImage.swift in Sources */,
+				E2D5D9902BA8E54C00045F53 /* QuestionsView.swift in Sources */,
 				E2C692FF2BA6DEE90011E4E2 /* FavoritesViewController.swift in Sources */,
+				E2D5D98C2BA8CF4D00045F53 /* AddressInfoView.swift in Sources */,
 				E2C693132BA7203A0011E4E2 /* Filter.swift in Sources */,
+				E2D5D98E2BA8D5F600045F53 /* DescriptionInfoView.swift in Sources */,
 				E2C692F92BA6DEA90011E4E2 /* ProfileViewController.swift in Sources */,
-				E2B7B3382BA1B8CA00661104 /* UIViewController.swift in Sources */,
 				E2C6930A2BA71CE50011E4E2 /* UICollectionView.swift in Sources */,
 				E2B7B35F2BA1B8F200661104 /* LoginViewModel.swift in Sources */,
 				E2C6931D2BA769130011E4E2 /* Endpoint.swift in Sources */,

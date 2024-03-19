@@ -3,7 +3,7 @@ import Combine
 
 final class MainCoordinator: Coordinator {
     
-    var tabBarController: UITabBarController
+    let tabBarController: UITabBarController
     
     var childCoordinators: [Coordinator] = []
     private var cancellables: Set<AnyCancellable> = []
@@ -25,7 +25,7 @@ final class MainCoordinator: Coordinator {
         
         routingSearch.showDetailScreenSubject
             .sink { [weak self] vacancyModel in
-                self?.showDetailScreen()
+                self?.showDetailScreen(vacancy: vacancyModel)
             }
             .store(in: &cancellables)
         
@@ -63,10 +63,10 @@ final class MainCoordinator: Coordinator {
         tabBarController.setViewControllers([searchNavController, favoritesNavController, feedBackNavController, messagesNavController, profileNavController], animated: true)
     }
     
-    private func showDetailScreen() {
+    private func showDetailScreen(vacancy: Vacancy) {
         guard let navigationController = tabBarController.selectedViewController as? UINavigationController else { return }
         let routing = DetailViewModelRouting()
-        let detailViewModel = DetailViewModel(routing: routing)
+        let detailViewModel = DetailViewModel(routing: routing, vacancy: vacancy)
         let detailViewController = DetailViewController()
         detailViewController.viewModel = detailViewModel
         detailViewController.hidesBottomBarWhenPushed = true

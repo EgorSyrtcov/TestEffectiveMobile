@@ -3,7 +3,7 @@ import Combine
 
 final class RegistrationCoordinator: Coordinator {
     
-    var navigationController = UINavigationController()
+    let navigationController = UINavigationController()
     
     let flowDidFinishSubject = PassthroughSubject<Void, Never>()
     private var cancellables: Set<AnyCancellable> = []

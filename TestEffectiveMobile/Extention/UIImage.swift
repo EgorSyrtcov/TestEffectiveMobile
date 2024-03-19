@@ -18,6 +18,9 @@ extension UIImage {
         case backIcon
         case lookIcon
         case sharedIcon
+        case lookFullIcon
+        case profileFullIcon
+        case mapImage
     }
     
     static func named(_ name: AssetName) -> UIImage {

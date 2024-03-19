@@ -2,48 +2,53 @@ import UIKit
 
 final class JobInfoView: UIView {
     
-    lazy var jobTitleLabel: UILabel = {
+    lazy private var jobTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "UI/UX Designer"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .white
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         return label
     }()
     
-    lazy var incomeLevelLabel: UILabel = {
+    lazy private var incomeLevelLabel: UILabel = {
         let label = UILabel()
-        label.text = "Уровень дохода не указан"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .white
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()
     
-    lazy var experienceLabel: UILabel = {
+    lazy private var experienceLabel: UILabel = {
         let label = UILabel()
-        label.text = "Требуемый опыт: от 1 года до 3 лет"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .white
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()
     
-    lazy var employmentTypeLabel: UILabel = {
+    lazy private var employmentTypeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Полная занятость, полный день"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .white
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, vacancy: Vacancy?){
         super.init(frame: frame)
+        self.setupVacancy(vacancy: vacancy)
         setupViews()
         setupUI()
     }
@@ -54,8 +59,14 @@ final class JobInfoView: UIView {
         setupUI()
     }
     
+    func setupVacancy(vacancy: Vacancy?) {
+        jobTitleLabel.text = vacancy?.title
+        incomeLevelLabel.text = vacancy?.salary.full
+        experienceLabel.text = "Требуемый опыт: \(vacancy?.experience.text ?? "")"
+        employmentTypeLabel.text = vacancy?.formattedSchedules()
+    }
+    
     private func setupViews() {
-        backgroundColor = .green
         addSubviews(jobTitleLabel, incomeLevelLabel, experienceLabel, employmentTypeLabel)
         translatesAutoresizingMaskIntoConstraints = false
     }

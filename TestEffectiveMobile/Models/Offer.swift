@@ -55,36 +55,78 @@ struct Vacancy: Codable {
         return "Сейчас просматривают \(lookingNumber) \(ending)"
     }
     
-    func descriptionPublishedDate() -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd" // Измените это на формат вашей даты
-            guard let date = dateFormatter.date(from: publishedDate) else { return "" }
-            dateFormatter.dateFormat = "d MMMM"
-            let dateString = dateFormatter.string(from: date)
-            let components = dateString.components(separatedBy: " ")
-            guard let day = components.first, let month = components.last else { return "" }
-            return "Опубликовано \(day) \(declineMonthName(month, day: Int(day)!))"
+    // Функция для форматирования типа занятости
+    func formattedSchedules() -> String {
+        guard !schedules.isEmpty else { return "Тип занятости не указан" }
+        
+        let formattedSchedules = schedules.map { schedule -> String in
+            let words = schedule.lowercased().split(separator: " ").map(String.init)
+            let capitalizedWords = words.enumerated().map { index, word -> String in
+                if index == 0 || words[index - 1].last == "," {
+                    return word.capitalized
+                } else {
+                    return word
+                }
+            }
+            return capitalizedWords.joined(separator: " ")
+        }.joined(separator: ", ")
+        
+        return formattedSchedules
+    }
+    
+    // Функция для форматирования количества откликов
+    func formattedAppliedNumber(_ appliedNumber: Int) -> String {
+        let number = appliedNumber % 100
+        let remainder = number % 10
+        
+        let ending: String
+        if (number >= 11 && number <= 19) {
+            ending = "человек уже откликнулось"
+        } else if (remainder == 1) {
+            ending = "человек уже откликнулся"
+        } else if (remainder >= 2 && remainder <= 4) {
+            ending = "человека уже откликнулись"
+        } else {
+            ending = "человек откликнулось"
         }
+        
+        return "\(appliedNumber) \(ending)"
+    }
+    
+    func descriptionPublishedDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" // Измените это на формат вашей даты
+        guard let date = dateFormatter.date(from: publishedDate) else { return "" }
+        dateFormatter.dateFormat = "d MMMM"
+        let dateString = dateFormatter.string(from: date)
+        let components = dateString.components(separatedBy: " ")
+        guard let day = components.first, let month = components.last else { return "" }
+        return "Опубликовано \(day) \(declineMonthName(month, day: Int(day)!))"
+    }
     
     private func declineMonthName(_ month: String, day: Int) -> String {
-           let monthDeclensions: [String: [String]] = [
-               "январь": ["января", "января", "января"],
-               "февраль": ["февраля", "февраля", "февраля"],
-               // Добавьте остальные месяцы
-           ]
-           let lastDigit = day % 10
-           var declensionIndex = 2
-           if lastDigit == 1 {
-               declensionIndex = 0
-           } else if lastDigit >= 2 && lastDigit <= 4 {
-               declensionIndex = 1
-           }
-           return monthDeclensions[month]?[declensionIndex] ?? month
-       }
+        let monthDeclensions: [String: [String]] = [
+            "январь": ["января", "января", "января"],
+            "февраль": ["февраля", "февраля", "февраля"],
+            // Добавьте остальные месяцы
+        ]
+        let lastDigit = day % 10
+        var declensionIndex = 2
+        if lastDigit == 1 {
+            declensionIndex = 0
+        } else if lastDigit >= 2 && lastDigit <= 4 {
+            declensionIndex = 1
+        }
+        return monthDeclensions[month]?[declensionIndex] ?? month
+    }
     
     // MARK: - Address
     struct Address: Codable {
         let town, street, house: String
+        
+        var descriptionAddress: String {
+                return "\(town), \(street), \(house)"
+            }
     }
     
     // MARK: - Experience
